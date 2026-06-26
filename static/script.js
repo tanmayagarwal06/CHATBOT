@@ -31,7 +31,7 @@ const addMessage = (message, role, imgSrc) => {
 //Section: Calling the model
 const sendMessage = async (message) => {
   // addMessage(message, 'user','user.jpeg');
-  addMessage(message, 'user','../static/user.jpeg');
+  addMessage(message, 'user','/static/user.jpeg');
   // Loading animation
   const loadingElement = document.createElement('div');
   const loadingtextElement = document.createElement('p');
@@ -42,7 +42,7 @@ const sendMessage = async (message) => {
   messagesContainer.appendChild(loadingtextElement);
 
   async function makePostRequest(msg) {
-    const url = 'www.example.com';  // Make a POST request to this url
+    const url = '/chatbot';  // Make a POST request to this url
     const requestBody = {
       prompt: msg
     };
@@ -81,12 +81,12 @@ const sendMessage = async (message) => {
     // Handle the error here
     const errorMessage = JSON.stringify(data);
     // addMessage(errorMessage, 'error','Error.png');
-    addMessage(errorMessage, 'error','../static/Error.png');
+    addMessage(errorMessage, 'error','/static/Error.png');
   } else {
     // Process the normal response here
     const responseMessage = data['response'];
     // addMessage(responseMessage, 'aibot','Bot_logo.png');
-    addMessage(responseMessage, 'aibot','../static/Bot_logo.png');
+    addMessage(responseMessage, 'aibot','/static/Bot_logo.png');
   }
   
   //!!!!! code to  save the content in history
